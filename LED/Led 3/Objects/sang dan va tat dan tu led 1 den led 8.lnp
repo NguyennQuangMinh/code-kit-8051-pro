@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\sang dan va tat dan tu led 1 den led 8" 
+PRINT(".\Listings\sang dan va tat dan tu led 1 den led 8.m51") RAMSIZE(256) 

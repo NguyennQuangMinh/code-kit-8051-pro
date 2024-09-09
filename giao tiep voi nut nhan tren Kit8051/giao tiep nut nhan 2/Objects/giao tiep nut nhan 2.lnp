@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\giao tiep nut nhan 2" 
+PRINT(".\Listings\giao tiep nut nhan 2.m51") RAMSIZE(256) 

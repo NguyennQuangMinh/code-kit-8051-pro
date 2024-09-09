@@ -1,0 +1,75 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              08/28/2024 15:38:00 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\hoc\8051\Keil_C_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "main.h"
+   2          #include "C:\hoc\8051\bai_tap\Library\Delay\Delay.h"
+   3          
+   4          #define COMMONPORTS P0
+   5          
+   6          sbit IE74595_STCP = P3^5;     // RCK
+   7          sbit IE74595_SHCP = P3^6;     // SRCLK
+   8          sbit IE74595_DS = P3^4;       // SER
+   9          
+  10          unsigned char code LedMatrix_8x8_0[] = {0x00,0x7C,0x8A,0x92,0xA2,0x7C,0x00,0x00,}; // ma so 0 tren led ma 
+             -tran
+  11          
+  12          
+  13          
+  14          void IE74595_Out(unsigned char *p, unsigned char n)
+  15          {
+  16   1        unsigned int i, j, b;
+  17   1        for(j = 0; j<n; j++)
+  18   1        {
+  19   2          b = *(p + n - j - 1); //Lay tu byte cao nhat den byte thap nhat
+  20   2          for(i=0; i<8; i++)
+  21   2          {
+  22   3            IE74595_DS = b & (0x80>>i); // lay tung bit cua byte b gui ra DS, lay tu bit cao xuong bit thap
+  23   3            
+  24   3            // tao xung nhan du lieu
+  25   3            IE74595_SHCP = 0; 
+  26   3            IE74595_SHCP = 1;
+  27   3          }
+  28   2        }
+  29   1      
+  30   1        // tao xung xuat du lieu
+  31   1        IE74595_STCP = 0;
+  32   1        IE74595_STCP = 1;
+  33   1      }
+  34          
+  35          void main() 
+  36          {
+  37   1          unsigned char i;
+  38   1          while (1) 
+  39   1          {
+  40   2              for (i = 0; i < 8; i++) 
+  41   2              {
+  42   3                  IE74595_Out(&LedMatrix_8x8_0[i], 1); // Output column data
+  43   3                  P0 = ~(0x01<<i);
+  44   3                  Delay_ms(2); 
+  45   3                  P0 = 0xFF; // Clear all rows to prevent ghosting
+  46   3              }
+  47   2          }
+  48   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    176    ----
+   CONSTANT SIZE    =      8    ----
+C51 COMPILER V9.60.7.0   MAIN                                                              08/28/2024 15:38:00 PAGE 2   
+
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       9
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

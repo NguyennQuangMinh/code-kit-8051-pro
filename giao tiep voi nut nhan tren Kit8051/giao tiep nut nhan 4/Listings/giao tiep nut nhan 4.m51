@@ -1,0 +1,173 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    09/07/2024  23:46:15  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\HOC\8051\KEIL_C_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\giao tiep nut nhan 4 PRINT (.\Listings\giao tiep 
+>> nut nhan 4.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\HOC\8051\KEIL_C_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\HOC\8051\KEIL_C_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\giao tiep nut nhan 4 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?MAIN
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     005DH     UNIT         ?PR?MAIN?MAIN
+            CODE    00ECH     002FH     UNIT         ?PR?CHECKPRESS?MAIN
+            CODE    011BH     0024H     UNIT         ?PR?_DELAY_MS?MAIN
+            CODE    013FH     0003H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\giao tiep nut nhan 4 (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?_DELAY_MS?MAIN
+  +--> ?PR?CHECKPRESS?MAIN
+
+?PR?CHECKPRESS?MAIN
+  +--> ?PR?_DELAY_MS?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\giao tiep nut nhan 4 (MAIN)
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/07/2024  23:46:15  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00B0H.3       PUBLIC        K4
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:00ECH         PUBLIC        checkPress
+  C:008FH         PUBLIC        main
+  B:0020H.0       PUBLIC        flagPress
+  C:011FH         PUBLIC        _Delay_ms
+  B:00B0H.1       PUBLIC        K1
+  B:00B0H.0       PUBLIC        K2
+  B:00B0H.2       PUBLIC        K3
+  C:011BH         SYMBOL        L?0046
+  -------         PROC          L?0045
+  -------         ENDPROC       L?0045
+  C:011BH         SYMBOL        L?0046
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:011FH         LINE#         15
+  C:011FH         LINE#         16
+  C:011FH         LINE#         18
+  C:0129H         LINE#         19
+  C:0129H         LINE#         20
+  C:0137H         LINE#         21
+  C:013EH         LINE#         22
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          CHECKPRESS
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:00ECH         LINE#         24
+  C:00ECH         LINE#         25
+  C:00ECH         LINE#         27
+  C:00EFH         LINE#         28
+  C:00EFH         LINE#         29
+  C:00F6H         LINE#         30
+  C:0102H         LINE#         31
+  C:0102H         LINE#         32
+  C:0105H         LINE#         33
+  C:0105H         LINE#         34
+  C:0107H         LINE#         35
+  C:010CH         LINE#         36
+  C:010CH         LINE#         37
+  C:010CH         LINE#         38
+  C:010EH         LINE#         39
+  C:0117H         LINE#         40
+  C:011AH         LINE#         41
+  -------         ENDPROC       CHECKPRESS
+  -------         PROC          MAIN
+  C:008FH         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/07/2024  23:46:15  PAGE 3
+
+
+  C:008FH         LINE#         44
+  C:008FH         LINE#         45
+  C:008FH         LINE#         46
+  C:008FH         LINE#         48
+  C:0092H         LINE#         49
+  C:0092H         LINE#         50
+  C:0095H         LINE#         51
+  C:0098H         LINE#         52
+  C:009BH         LINE#         53
+  C:009BH         LINE#         54
+  C:009BH         LINE#         55
+  C:00A2H         LINE#         56
+  C:00A5H         LINE#         57
+  C:00A7H         LINE#         59
+  C:00A7H         LINE#         62
+  C:00AAH         LINE#         63
+  C:00AAH         LINE#         64
+  C:00ADH         LINE#         65
+  C:00B0H         LINE#         66
+  C:00B3H         LINE#         67
+  C:00B3H         LINE#         68
+  C:00B3H         LINE#         69
+  C:00BAH         LINE#         70
+  C:00BDH         LINE#         71
+  C:00BFH         LINE#         72
+  C:00BFH         LINE#         75
+  C:00C2H         LINE#         76
+  C:00C2H         LINE#         77
+  C:00C5H         LINE#         78
+  C:00C8H         LINE#         79
+  C:00CBH         LINE#         80
+  C:00CBH         LINE#         81
+  C:00CBH         LINE#         82
+  C:00D2H         LINE#         83
+  C:00D5H         LINE#         84
+  C:00D7H         LINE#         85
+  C:00D7H         LINE#         88
+  C:00DAH         LINE#         89
+  C:00DAH         LINE#         90
+  C:00DDH         LINE#         91
+  C:00E0H         LINE#         92
+  C:00E3H         LINE#         93
+  C:00E3H         LINE#         94
+  C:00E3H         LINE#         95
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=9.1 xdata=0 code=322
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

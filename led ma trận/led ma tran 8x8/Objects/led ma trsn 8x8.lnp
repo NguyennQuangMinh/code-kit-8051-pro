@@ -1,0 +1,4 @@
+".\Objects\main.obj",
+".\Objects\Delay.obj" 
+TO ".\Objects\led ma trsn 8x8" 
+PRINT(".\Listings\led ma trsn 8x8.m51") RAMSIZE(256) 

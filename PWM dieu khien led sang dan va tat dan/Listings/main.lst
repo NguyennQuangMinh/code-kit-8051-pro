@@ -1,0 +1,128 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              09/05/2024 11:55:11 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\hoc\8051\Keil_C_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          
+   2          // dieu khien led sang dan va tat dan bang PWM
+   3          
+   4          #include "main.h"
+   5          #include "C:\hoc\8051\bai_tap\Library\Delay\Delay.h"
+   6          
+   7          unsigned int T, Ton, Toff;
+   8          unsigned char Ton_TH0_reload, Ton_TL0_reload, Toff_TH0_reload, Toff_TL0_reload;
+   9          
+  10          // ck(us)
+  11          void PWM_Init(unsigned int ck) //khoi tao PWM voi chu ky tu chon (us)
+  12          {
+  13   1        // khoi tao T0 mode 1: 16bit
+  14   1        TMOD &= 0xF0;
+  15   1        TMOD |= 0x01;
+  16   1        
+  17   1        EA = 1; //cho phep ngat toan cuc
+  18   1        ET0 = 1 ; //cho phep ngat T0
+  19   1        
+  20   1        T = ck;
+  21   1        
+  22   1        //sau 1us se tran => 65536 - 1000 = 64536 => FC18
+  23   1        TH0 = 0xFC;
+  24   1        TL0 = 0x18;
+  25   1      }
+  26          
+  27          // D tu 0 den 100
+  28          void PWM_SetDuty(unsigned char D) // do rong xung %
+  29          {
+  30   1        if(D==0)
+  31   1        {
+  32   2          P2_0 = 0;
+  33   2          ET0 = 0; // cam ngat T0
+  34   2        }
+  35   1        else if(D==100)
+  36   1        {
+  37   2          P2_0 = 1;
+  38   2          ET0 = 0; // cam ngat T0
+  39   2        }
+  40   1        else
+  41   1        {
+  42   2          Ton = T * ((unsigned long)D)/100; 
+  43   2          Toff = T - Ton;
+  44   2          
+  45   2          Ton_TH0_reload = (65536 - Ton) >> 8;
+  46   2          Ton_TL0_reload = (65536 - Ton) &0x00FF;
+  47   2          
+  48   2          Toff_TH0_reload = (65536 - Toff) >> 8;
+  49   2          Toff_TL0_reload = (65536 - Toff) & 0x00FF;
+  50   2          
+  51   2          ET0 = 1; //cho phep ngat T0 
+  52   2        }
+  53   1      }
+  54          
+C51 COMPILER V9.60.7.0   MAIN                                                              09/05/2024 11:55:11 PAGE 2   
+
+  55          void main()
+  56          {
+  57   1        unsigned char dir = 0;
+  58   1        unsigned char duty = 0;
+  59   1        
+  60   1        PWM_Init(1000); // chon chu ky cua xung
+  61   1        PWM_SetDuty(0); // chon do rong xung x% (x: const)
+  62   1        TR0 = 1;  // cho phep T0 bat dau dem
+  63   1      
+  64   1        while(1)
+  65   1        {
+  66   2          Delay_ms(100);
+  67   2          //sang dan
+  68   2          if(dir == 0)
+  69   2          {
+  70   3            duty += 2;
+  71   3            if(duty == 100)
+  72   3            {
+  73   4              dir = 1;
+  74   4            }
+  75   3          }
+  76   2          // tat dan
+  77   2          else
+  78   2          {
+  79   3            duty -= 2;
+  80   3            if(duty == 0)
+  81   3            {
+  82   4              dir = 0;
+  83   4            }
+  84   3          }
+  85   2          PWM_SetDuty(duty);
+  86   2        }
+  87   1      }
+  88          
+  89          void Timer0_Overflow() interrupt 1
+  90          {
+  91   1        P2_0 = !P2_0;
+  92   1        if(P2_0 == 0)
+  93   1        {
+  94   2          TH0 = Toff_TH0_reload;
+  95   2          TL0 = Toff_TL0_reload;
+  96   2        }
+  97   1        else if(P2_0 == 1)
+  98   1        {
+  99   2          TH0 = Ton_TH0_reload;
+ 100   2          TL0 = Ton_TL0_reload;
+ 101   2        }
+ 102   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    227    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

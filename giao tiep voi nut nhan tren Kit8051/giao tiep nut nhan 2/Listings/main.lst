@@ -1,0 +1,94 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              09/07/2024 22:04:26 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\hoc\8051\Keil_C_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          
+   2          // nhan nut K1 se nhap nhay led xen ke, nhan them lan nua se tat
+   3          
+   4          #include <REGX52.H>
+   5          
+   6          sbit K1 = P3^1;
+   7          bit flagBTN = 0;
+   8          
+   9          void Delay_ms(unsigned int t)
+  10          {
+  11   1        unsigned int x,y;
+  12   1        for(x =0; x<t; x++)
+  13   1        {
+  14   2          for(y=0; y<123; y++);
+  15   2        }
+  16   1      }
+  17          
+  18          unsigned int pressBTN()
+  19          {
+  20   1        unsigned int i;
+  21   1        for(i=0; i<50; i++)
+  22   1        { // quet kiem tra lien tuc 50 lan => tong thoi gian quet 1 la 500ms
+  23   2          Delay_ms(10);
+  24   2          if( K1==0 )
+  25   2          {
+  26   3            if(flagBTN == 0)
+  27   3            {
+  28   4              flagBTN = 1;
+  29   4              return 1;
+  30   4            }
+  31   3          }
+  32   2          else
+  33   2          {
+  34   3            flagBTN = 0;
+  35   3          }
+  36   2        }
+  37   1        return 0;
+  38   1      }
+  39          
+  40          void main()
+  41          {
+  42   1        unsigned int cnt=0;
+  43   1        while(1)
+  44   1        {
+  45   2          if(K1 == 0)
+  46   2          {
+  47   3            if(pressBTN())
+  48   3            {
+  49   4              cnt++;
+  50   4              if(cnt%2!=0)
+  51   4              {
+  52   5                P2 = 0x55;
+  53   5                while(1)
+  54   5                {
+C51 COMPILER V9.60.7.0   MAIN                                                              09/07/2024 22:04:26 PAGE 2   
+
+  55   6                  if(pressBTN())
+  56   6                  {
+  57   7                    cnt++;
+  58   7                    P2 = 0xFF;
+  59   7                    break;
+  60   7                  }
+  61   6                  P2 = ~P2;
+  62   6                }       
+  63   5              }
+  64   4            }
+  65   3          }
+  66   2          
+  67   2        }
+  68   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    122    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

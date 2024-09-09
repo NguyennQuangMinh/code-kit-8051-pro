@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\nhap nhay toan bo led" 
+PRINT(".\Listings\nhap nhay toan bo led.m51") RAMSIZE(256) 

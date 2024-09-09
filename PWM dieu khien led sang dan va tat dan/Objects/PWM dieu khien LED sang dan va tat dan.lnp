@@ -1,0 +1,4 @@
+".\Objects\main.obj",
+".\Objects\Delay.obj" 
+TO ".\Objects\PWM dieu khien LED sang dan va tat dan" 
+PRINT(".\Listings\PWM dieu khien LED sang dan va tat dan.m51") RAMSIZE(256) 

@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\phepOR_1" 
+PRINT(".\Listings\phepOR_1.m51") RAMSIZE(256) 

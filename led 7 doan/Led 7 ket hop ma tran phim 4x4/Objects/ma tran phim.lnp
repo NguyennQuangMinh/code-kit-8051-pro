@@ -1,0 +1,6 @@
+".\Objects\Delay.obj",
+".\Objects\main.obj",
+".\Objects\KeyPad4x4.obj" 
+TO ".\Objects\ma tran phim" 
+
+PRINT(".\Listings\ma tran phim.map")

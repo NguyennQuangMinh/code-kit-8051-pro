@@ -1,0 +1,59 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              09/07/2024 17:01:32 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\hoc\8051\Keil_C_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          
+   2          // sang dan va tat dan tu led 0 den led 8 bang phuong phap dich bit
+   3          
+   4          #include <REGX52.H>
+   5          
+   6          void Delay_ms(unsigned int t)
+   7          {
+   8   1        unsigned int x,y;
+   9   1        for(x=0; x<t; x++)
+  10   1        {
+  11   2          for(y=0;y<123;y++);
+  12   2        }
+  13   1      }
+  14          
+  15          void main()
+  16          {
+  17   1        unsigned int i;
+  18   1        while(1)
+  19   1        {
+  20   2          //sang dan tu led 0 den led 8
+  21   2          for(i=0; i<8;i++){
+  22   3            P2 <<=1; //dich trai 1 lan
+  23   3            P2 &= 0xFE; // moi lan dich bit se keo bit thap nhat xuong muc 0 de bat led
+  24   3            Delay_ms(500);
+  25   3          }
+  26   2          //tat dan cac led tu led 8 -> led 0
+  27   2          for(i=0;i<8;i++)
+  28   2          {
+  29   3            P2 >>=1; //dich phai 1 lan
+  30   3            P2 |= 0x80; // moi lan dich bit se keo bit cao nhat len muc 1 de tat led
+  31   3            Delay_ms(500);
+  32   3          }
+  33   2        }
+  34   1      
+  35   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     95    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

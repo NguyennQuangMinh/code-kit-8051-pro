@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\ChopTatLedBangDaoBit" 
+PRINT(".\Listings\ChopTatLedBangDaoBit.m51") RAMSIZE(256) 
