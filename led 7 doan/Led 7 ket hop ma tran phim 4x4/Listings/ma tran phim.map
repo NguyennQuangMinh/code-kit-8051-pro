@@ -1,4 +1,4 @@
-LX51 LINKER/LOCATER V4.66.100.0                                                         08/30/2024  22:36:58  PAGE 1
+LX51 LINKER/LOCATER V4.66.100.0                                                         09/12/2024  20:03:52  PAGE 1
 
 
 LX51 LINKER/LOCATER V4.66.100.0, INVOKED BY:
@@ -67,7 +67,7 @@ MAIN/MAIN                   ----- -----  0010H 0012H
   +--> KEYPRESS/KEYPAD4X4
   +--> DIGDISPLAY/MAIN
 
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 2
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 2
 
 
 KEYPRESS/KEYPAD4X4          ----- -----  ----- -----
@@ -135,7 +135,7 @@ PUBLIC SYMBOLS OF MODULE:  .\Objects\ma tran phim (DELAY)
 *SFR* 00000080H.1 DATA     BIT       P0_1
 *SFR* 00000080H.2 DATA     BIT       P0_2
 *SFR* 00000080H.3 DATA     BIT       P0_3
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 3
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 3
 
 
 *SFR* 00000080H.4 DATA     BIT       P0_4
@@ -203,7 +203,7 @@ PUBLIC SYMBOLS OF MODULE:  .\Objects\ma tran phim (DELAY)
 *SFR* 000000C8H   DATA     BYTE      T2CON
 *SFR* 00000090H.1 DATA     BIT       T2EX
 *SFR* 000000C9H   DATA     BYTE      T2MOD
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 4
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 4
 
 
 *SFR* 00000098H.3 DATA     BIT       TB8
@@ -271,7 +271,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ma tran phim (DELAY)
       000000B0H.4 SFRSYM    DATA     BIT       P3_4
       000000A0H.5 SFRSYM    DATA     BIT       P2_5
       00000090H.6 SFRSYM    DATA     BIT       P1_6
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 5
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 5
 
 
       00000080H.7 SFRSYM    DATA     BIT       P0_7
@@ -339,7 +339,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ma tran phim (DELAY)
       00000088H.6 SFRSYM    DATA     BIT       TR1
       000000C8H.2 SFRSYM    DATA     BIT       TR2
       000000B8H.0 SFRSYM    DATA     BIT       PX0
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 6
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 6
 
 
       000000B8H.2 SFRSYM    DATA     BIT       PX1
@@ -407,7 +407,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ma tran phim (DELAY)
       000000A0H.3 SFRSYM    DATA     BIT       P2_3
       00000090H.4 SFRSYM    DATA     BIT       P1_4
       00000080H.5 SFRSYM    DATA     BIT       P0_5
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 7
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 7
 
 
       000000C8H.6 SFRSYM    DATA     BIT       EXF2
@@ -475,7 +475,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ma tran phim (DELAY)
       0000008BH   SFRSYM    DATA     BYTE      TL1
       00000098H.5 SFRSYM    DATA     BIT       SM2
       000000CCH   SFRSYM    DATA     BYTE      TL2
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 8
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 8
 
 
       000000B8H.1 SFRSYM    DATA     BIT       PT0
@@ -543,7 +543,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ma tran phim (DELAY)
 
       010000D9H   BLOCK     CODE     ---       LVL=0
       010000D9H   BLOCK     CODE     NEAR LAB  LVL=1
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 9
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 9
 
 
       00000010H   SYMBOL    DATA     BYTE      key
@@ -611,7 +611,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ma tran phim (DELAY)
       000000A0H.3 SFRSYM    DATA     BIT       P2_3
       00000090H.4 SFRSYM    DATA     BIT       P1_4
       00000080H.5 SFRSYM    DATA     BIT       P0_5
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 10
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 10
 
 
       000000C8H.6 SFRSYM    DATA     BIT       EXF2
@@ -679,7 +679,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ma tran phim (DELAY)
       0000008BH   SFRSYM    DATA     BYTE      TL1
       00000098H.5 SFRSYM    DATA     BIT       SM2
       000000CCH   SFRSYM    DATA     BYTE      TL2
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 11
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 11
 
 
       000000B8H.1 SFRSYM    DATA     BIT       PT0
@@ -715,39 +715,39 @@ SYMBOL TABLE OF MODULE:  .\Objects\ma tran phim (DELAY)
       01000076H   BLOCK     CODE     NEAR LAB  LVL=1
       00000007H   SYMBOL    DATA     BYTE      key
       ---         BLOCKEND  ---      ---       LVL=1
-      01000076H   LINE      CODE     ---       #5
-      01000076H   LINE      CODE     ---       #6
-      01000076H   LINE      CODE     ---       #7
-      01000078H   LINE      CODE     ---       #10
-      0100007AH   LINE      CODE     ---       #11
-      0100007FH   LINE      CODE     ---       #12
-      01000084H   LINE      CODE     ---       #13
-      01000089H   LINE      CODE     ---       #14
-      0100008EH   LINE      CODE     ---       #15
-      01000090H   LINE      CODE     ---       #18
-      01000092H   LINE      CODE     ---       #19
-      01000097H   LINE      CODE     ---       #20
-      0100009CH   LINE      CODE     ---       #21
-      010000A1H   LINE      CODE     ---       #22
-      010000A6H   LINE      CODE     ---       #23
-      010000A8H   LINE      CODE     ---       #26
-      010000AAH   LINE      CODE     ---       #27
-      010000AFH   LINE      CODE     ---       #28
-      010000B4H   LINE      CODE     ---       #29
-      010000B9H   LINE      CODE     ---       #30
-      010000BEH   LINE      CODE     ---       #31
-      010000C0H   LINE      CODE     ---       #34
-      010000C2H   LINE      CODE     ---       #35
-      010000C7H   LINE      CODE     ---       #36
-      010000CCH   LINE      CODE     ---       #37
-      010000D1H   LINE      CODE     ---       #38
-      010000D6H   LINE      CODE     ---       #39
-      010000D8H   LINE      CODE     ---       #41
-      010000D8H   LINE      CODE     ---       #42
+      01000076H   LINE      CODE     ---       #16
+      01000076H   LINE      CODE     ---       #17
+      01000076H   LINE      CODE     ---       #18
+      01000078H   LINE      CODE     ---       #21
+      0100007AH   LINE      CODE     ---       #22
+      0100007FH   LINE      CODE     ---       #23
+      01000084H   LINE      CODE     ---       #24
+      01000089H   LINE      CODE     ---       #25
+      0100008EH   LINE      CODE     ---       #26
+      01000090H   LINE      CODE     ---       #29
+      01000092H   LINE      CODE     ---       #30
+      01000097H   LINE      CODE     ---       #31
+      0100009CH   LINE      CODE     ---       #32
+      010000A1H   LINE      CODE     ---       #33
+      010000A6H   LINE      CODE     ---       #34
+      010000A8H   LINE      CODE     ---       #37
+      010000AAH   LINE      CODE     ---       #38
+      010000AFH   LINE      CODE     ---       #39
+      010000B4H   LINE      CODE     ---       #40
+      010000B9H   LINE      CODE     ---       #41
+      010000BEH   LINE      CODE     ---       #42
+      010000C0H   LINE      CODE     ---       #45
+      010000C2H   LINE      CODE     ---       #46
+      010000C7H   LINE      CODE     ---       #47
+      010000CCH   LINE      CODE     ---       #48
+      010000D1H   LINE      CODE     ---       #49
+      010000D6H   LINE      CODE     ---       #50
+      010000D8H   LINE      CODE     ---       #52
+      010000D8H   LINE      CODE     ---       #53
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       ?C_STARTUP
-LX51 LINKER/LOCATER V4.66.100.0                                                       08/30/2024  22:36:58  PAGE 12
+LX51 LINKER/LOCATER V4.66.100.0                                                       09/12/2024  20:03:52  PAGE 12
 
 
       01000000H   PUBLIC    CODE     ---       ?C_STARTUP

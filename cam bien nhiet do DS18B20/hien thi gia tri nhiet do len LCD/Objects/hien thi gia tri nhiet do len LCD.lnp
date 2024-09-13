@@ -1,0 +1,7 @@
+".\Objects\main.obj",
+".\Objects\Delay.obj",
+".\Objects\OneWire.obj",
+".\Objects\T0_Delay_us.obj",
+".\Objects\LCD4.obj" 
+TO ".\Objects\hien thi gia tri nhiet do len LCD" 
+PRINT(".\Listings\hien thi gia tri nhiet do len LCD.m51") RAMSIZE(256) 

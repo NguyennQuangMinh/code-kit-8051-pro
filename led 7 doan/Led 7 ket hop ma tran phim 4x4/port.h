@@ -3,10 +3,12 @@
 
 #define GPIO_DIG P0
 
+// khai bao chan ket noi cua ic 74hc138
 sbit LSA=P2^2;
 sbit LSB=P2^3;
 sbit LSC=P2^4;
 
+// khai bao chan ket noi cua key pad
 sbit COL_1 = P1^0;
 sbit COL_2 = P1^1;
 sbit COL_3 = P1^2;

@@ -1,10 +1,10 @@
-C51 COMPILER V9.60.7.0   DELAY                                                             09/12/2024 20:03:52 PAGE 1   
+C51 COMPILER V9.60.7.0   DELAY                                                             09/12/2024 22:41:50 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE DELAY
 OBJECT MODULE PLACED IN .\Objects\Delay.obj
-COMPILER INVOKED BY: C:\hoc\8051\Keil_C_v5\C51\BIN\C51.EXE ..\..\..\Library\Delay\Delay.c OMF2 OPTIMIZE(8,SPEED) BROWSE 
-                    -DEBUG PRINT(.\Listings\Delay.lst) TABS(2) OBJECT(.\Objects\Delay.obj)
+COMPILER INVOKED BY: C:\hoc\8051\Keil_C_v5\C51\BIN\C51.EXE ..\..\..\Library\Delay\Delay.c OPTIMIZE(8,SPEED) BROWSE DEBUG
+                    - OBJECTEXTEND PRINT(.\Listings\Delay.lst) TABS(2) OBJECT(.\Objects\Delay.obj)
 
 line level    source
 
@@ -13,27 +13,27 @@ line level    source
    3          
    4          
    5          #if (FREQ_OSC == 12000000)
+   6            void Delay_ms(unsigned int t)
+   7            {
+   8   1          unsigned int x, y;
+   9   1          for(x=0; x<t; x++)
+  10   1          {
+  11   2            for(y=0; y<123; y++);
+  12   2          }
+  13   1        }
+  14          
+  15          
+  16          #elif (FREQ_OSC == 11059200)
                 void Delay_ms(unsigned int t)
                 {
                   unsigned int x, y;
                   for(x=0; x<t; x++)
                   {
-                    for(y=0; y<123; y++);
+                    for(y=0; y<113; y++);
                   }
                 }
               
-              
-              #elif (FREQ_OSC == 11059200)
-  17            void Delay_ms(unsigned int t)
-  18            {
-  19   1          unsigned int x, y;
-  20   1          for(x=0; x<t; x++)
-  21   1          {
-  22   2            for(y=0; y<113; y++);
-  23   2          }
-  24   1        }
-  25          
-  26          #elif (FREQ_OSC == 8000000)
+              #elif (FREQ_OSC == 8000000)
                 void Delay_ms(unsigned int t)
                 {
                   unsigned int x, y;
@@ -62,17 +62,13 @@ line level    source
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =     32    ----
    CONSTANT SIZE    =   ----    ----
-C51 COMPILER V9.60.7.0   DELAY                                                             09/12/2024 20:03:52 PAGE 2   
+C51 COMPILER V9.60.7.0   DELAY                                                             09/12/2024 22:41:50 PAGE 2   
 
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
-   EDATA SIZE       =   ----    ----
-   HDATA SIZE       =   ----    ----
-   XDATA CONST SIZE =   ----    ----
-   FAR CONST SIZE   =   ----    ----
 END OF MODULE INFORMATION.
 
 
